@@ -1,0 +1,26 @@
+.todo_forms input {
+  padding: 10px;
+  border-radius: 10px;
+  margin: 8px;
+  border: 1px solid gray;
+}
+
+.li_list {
+  list-style-type: none;
+  margin: 0%;
+}
+
+.todo_list {
+  padding: 12px;
+  border-radius: 5px;
+  border: none;
+  margin: 0.25rem;
+  background-color: burlywood;
+}
+
+.todo_list-completeTrue {
+  text-decoration-style: solid;
+  text-decoration-color: red;
+  text-decoration-line: line-through;
+  opacity: 0.6;
+}

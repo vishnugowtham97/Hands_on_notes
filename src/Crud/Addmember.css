@@ -1,0 +1,48 @@
+.crud-operation > form > input {
+  padding: 10px;
+  margin: 2px;
+  border-radius: 15px;
+  border: 1px solid grey;
+}
+.table_contain {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.tr-row {
+  background-color: silver;
+  color: black;
+  font-size: larger;
+}
+
+.complete {
+  background-color: rgb(228, 225, 225);
+  /* text-decoration-line: line-through; */
+  text-decoration-color: green;
+  text-decoration-thickness: 2px;
+  color: red;
+  font-size: smaller;
+  text-decoration-line: line-through;
+}
+
+th {
+  background-color: lightgrey;
+  padding: 8px;
+}
+td {
+  padding: 5px;
+  background-color: lightslategray;
+}
+
+table {
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.btn {
+  width: max-content;
+  padding: 5px;
+  font-size: smaller;
+  margin: 5px;
+}
