@@ -147,3 +147,224 @@ for (let i = 0; i < a.length; i += 2) {
   a[i + 1] = temp;
 }
 console.log(a);
+
+// find the output
+arr = ["black", "purple", "bllue"];
+const obj = {
+  arr: ["red", "blue", "green"],
+  getLastColor: function () {
+    return this.arr[this.arr.length - 1];
+  },
+  getFirstColor: () => this.arr[0], // if its an obj.arr means it takes inside the obj arr value and results in "red"
+};
+console.log(obj.getLastColor()); // green
+console.log(obj.getFirstColor()); // black
+
+// To find the sum of the two number
+function twoSum(num, target) {
+  let map = new Map();
+  // here i greater than to num length
+  for (let i = 0; i < num.length; i++) {
+    const goal = target - num[i];
+    // To find the product of two number the only difference is the  input num want to get divide the target value
+
+    // const goal = target / num[i];
+
+    if (map.has(goal)) {
+      return [map.get(goal), i];
+    }
+    map.set(num[i], i);
+  }
+  return null;
+}
+const num = "2 7 5 3".split(" ").map(Number);
+const target = 10;
+const results = twoSum(num, target);
+console.log(Object.values(results));
+if (results != null) {
+  const [index1, index2] = results;
+  console.log(`Indices of the two numbers: ${index1}, ${index2}`);
+  console.log(`Numbers: ${num[index1]}, ${num[index2]}`);
+} else {
+  console.log("No solution found.");
+}
+
+// To find the sum of the three number
+function threeSum(num, target) {
+  for (let i = 0; i < num.length - 2; i++) {
+    const goal = target - num[i];
+    let map = new Map();
+
+    for (let j = i + 1; j < num.length; j++) {
+      const complement = goal - num[j];
+
+      if (map.has(complement)) {
+        return [i, map.get(complement), j];
+      }
+
+      map.set(num[j], j);
+    }
+  }
+
+  return null;
+}
+
+const num1 = "2 7 5 3".split(" ").map(Number);
+const target1 = 15; // Change the target as needed
+const results1 = threeSum(num1, target1);
+if (results1 != null) {
+  const [index1, index2, index3] = results;
+  console.log(`Indices of the three numbers: ${index1}, ${index2}, ${index3}`);
+  console.log(`Numbers: ${num[index1]}, ${num1[index2]}, ${num1[index3]}`);
+} else {
+  console.log("No solution found.");
+}
+
+// To find the number is prime or not
+
+function isPrime(numbers) {
+  if (numbers <= 1) {
+    return false;
+  }
+  for (let i = 2; i <= Math.sqrt(numbers); i++) {
+    if (numbers % i === 0) {
+      return false;
+    }
+  }
+  return true;
+}
+const numbers = 127;
+console.log(isPrime(numbers));
+
+// To find the prime range
+
+function isPrime(num) {
+  if (num <= 1) {
+    return false;
+  }
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+  return true;
+}
+const startRange = 2;
+const endRange = 10;
+
+function primeRange(startRange, endRange) {
+  for (let i = startRange + 1; i <= endRange - 1; i++) {
+    if (isPrime(i)) {
+      console.log(i);
+    }
+  }
+}
+primeRange(startRange, endRange);
+
+// To remove the immediate duplicate
+function removeImmediateDuplicate(n) {
+  let line = n.split("");
+  let str = line[0];
+
+  for (let i = 1; i < line.length; i++) {
+    if (line[i] != line[i - 1]) {
+      str += line[i];
+    }
+  }
+  return str;
+}
+const line = "1221331";
+const out = removeImmediateDuplicate(line);
+console.log(Number(out));
+
+// To find the anagram
+const word1 = "listen";
+const word2 = "silent";
+
+function isAnagram(w1, w2) {
+  if (w1.length != w2.length) {
+    return false;
+  }
+
+  const str1 = w1.replace(/\s/g, "").toLowerCase();
+  const str2 = w2.replace(/\s/g, "").toLowerCase();
+
+  const sort1 = str1.split("").sort().join("");
+  const sort2 = str2.split("").sort().join("");
+
+  return sort1 === sort2;
+}
+
+console.log(isAnagram(word1, word2));
+
+// To find the duplicates in array
+
+const array = [1, 2, 3, 4, 5, 4, 2];
+const duplicates = array.filter((val, ind, arr) => arr.indexOf(val) != ind);
+console.log(duplicates);
+
+// To find the min and max value in array without using in built function
+
+const a1 = [10, 20, 30, 40, 50, 60, 100];
+const minValue = a1.reduce(function (acc, val) {
+  return acc < val ? acc : val; // for max value acc > val
+});
+console.log(minValue);
+
+// To find the second largest num in array
+
+// using arrow func
+const value = (arr) => {
+  firstLargest = Math.max(...arr);
+
+  let index = arr.indexOf(firstLargest);
+  arr.splice(index, 1);
+  return (secondLargest = Math.max(...arr));
+};
+const a2 = [10, 20, 30, 40, 50, 60, 90, 100];
+console.log(value(a2));
+
+// To find the missing num in the int array
+const int = [10, 12, 13, 14, 25, 11, 18, 20];
+const minVal = Math.min(...int);
+const maxVal = Math.max(...int);
+for (let i = minVal; i <= maxVal; i++) {
+  if (int.indexOf(i) < 0) console.log(i);
+}
+
+// To find the factor of the number
+
+const nums = prompt("enter the number");
+for (let i = 1; i <= num; i++) {
+  if (nums % i == 0) {
+    console.log(i);
+  }
+}
+
+//  Simple calculator
+const selectOperator = prompt("enter the operator + - * /");
+const number1 = parseFloat(prompt("enter the number"));
+const number2 = parseFloat(prompt("enter the number"));
+
+if (selectOperator == "+") {
+  output = number1 + number2;
+} else if (selectOperator == "-") {
+  output = number1 - number2;
+} else if (selectOperator == "*") {
+  output = number1 * number2;
+} else if (selectOperator == "/") {
+  output = number1 / number2;
+} else if (selectOperator == "") {
+  output = alert(" Please select the operator to proceed");
+}
+console.log(output);
+
+// To find the fibonacci series
+
+let [c, d] = [0, 1];
+for (let i = 0; i <= 10; i++) {
+  let temp = c + d;
+  c = d;
+  d = temp;
+  console.log(temp);
+}
