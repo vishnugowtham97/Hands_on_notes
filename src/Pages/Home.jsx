@@ -1,10 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Counter from "../Component/Counter";
+import { Video } from "../Video_Component/Video";
 const Home = () => {
   return (
     <div>
       <Counter />
+      <Video />
     </div>
   );
 };

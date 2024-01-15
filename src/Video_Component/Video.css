@@ -1,0 +1,65 @@
+.video-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  padding: 16px;
+}
+
+.video-card {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.video-card:hover {
+  transform: scale(1.05);
+}
+
+.thumbnail {
+  width: 100%;
+  height: auto;
+}
+
+.video-info {
+  padding: 16px;
+}
+
+.video-title {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.video-description {
+  font-size: 14px;
+  color: #555;
+}
+
+.search-bar {
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.search-bar > input {
+  border-radius: 25px;
+  padding: 10px;
+}
+
+.video-player {
+  margin-top: 24px;
+}
+
+.video-player h2 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+video {
+  width: 100%;
+  max-width: 640px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
