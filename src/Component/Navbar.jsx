@@ -24,9 +24,6 @@ const Navbar = () => {
       <h3>
         <Link to="hooks">Hooks</Link>
       </h3>
-      <h3>
-        <Link to="crud">Crud</Link>
-      </h3>
     </div>
   );
 };
