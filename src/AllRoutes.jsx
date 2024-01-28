@@ -7,6 +7,7 @@ import Navbar from "./Component/Navbar";
 import ProfilePage from "./Pages/ProfilePage";
 import { myContext } from "./Context/userContext";
 import Hooks from "./Pages/Hooks";
+import CrudTodo from "./Pages/Crud_Todo";
 
 const AllRoutes = () => {
   const [userName, setUsername] = useState([]);
@@ -29,6 +30,7 @@ const AllRoutes = () => {
           <Route path="product" element={<Product />} />
           <Route path="login" element={<ProfilePage />} />
           <Route path="hooks" element={<Hooks />} />
+          <Route path="crud" element={<CrudTodo />} />
         </Routes>
       </myContext.Provider>
     </div>

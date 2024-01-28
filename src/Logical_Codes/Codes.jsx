@@ -1,19 +1,120 @@
+// Primitive Types
+let numericValue = 42; // Number
+let textValue = "Hello"; // String
+let booleanValue = true; // Boolean
+let undefinedValue = undefined; // Undefined
+let nullValue = null; // Null
+let symbolValue = Symbol('unique'); // Symbol
+
+// Object Types
+let arrayValue = [1, 2, 3]; // Array
+let objectValue = { key: 'value' }; // Object
+
+// Functions
+function myFunction() {
+  // Function code
+}
+
+// typeof operator can be used to check the type of a variable
+console.log(typeof numericValue); // "number"
+console.log(typeof textValue); // "string"
+console.log(typeof booleanValue); // "boolean"
+console.log(typeof undefinedValue); // "undefined"
+console.log(typeof nullValue); // "object" (Note: typeof null is an unfortunate quirk in JavaScript)
+console.log(typeof symbolValue); // "symbol"
+console.log(typeof arrayValue); // "object"
+console.log(typeof objectValue); // "object"
+console.log(typeof myFunction); // "function"
+
+
+import React, { useState } from "react";
+import "./App.css";
+
+export default function App() {
+  const [message, setMessage] = useState(false);
+
+  const handleClick = () => {
+    if (message.length === 0) {
+      setMessage(true);
+      setMessage("Welcome to my World");
+    } else {
+      setMessage("");
+    }
+  };
+  return (
+    <div>
+      <h1>{message}</h1>
+      <button onClick={handleClick}>Click Me</button>
+    </div>
+  );
+}
+
+
+import React, { useState } from 'react'
+import './App.css'
+
+export default function App() {
+	const [message, setMessage] = useState(false)
+
+	const handleClick = () => {
+		setMessage(!message)
+	}
+	return (
+		<div>
+			{message && <h1>hi</h1>}
+			<button onClick={handleClick}>Click Me</button>
+		</div>
+	)
+}
+
+
+// splice: Modifies array, adds/removes elements, returns removed elements.
+
+// slice: Creates a shallow copy, extracts elements, does not modify original array.
+
+//  Splice
+// array.splice(start, deleteCount, item1, item2, ...);
+
+const fruits = ["apple", "banana", "orange", "grape"];
+
+// Remove 1 element starting from index 1
+fruits.splice(1, 1);
+console.log(fruits); // Output: ['apple', 'orange', 'grape']
+
+// Replace 1 element starting from index 1 with 'kiwi' and 'melon'
+fruits.splice(1, 1, "kiwi", "melon");
+console.log(fruits); // Output: ['apple', 'kiwi', 'melon', 'grape']
+
+// Add 'peach' and 'plum' starting from index 2 without removing any element
+fruits.splice(2, 0, "peach", "plum");
+console.log(fruits); // Output: ['apple', 'kiwi', 'peach', 'plum', 'melon', 'grape']
+
+// Slice
+const arrays = [1, 2, 3, 4, 5];
+const newArray = arrays.slice(1, 3);
+// array: [1, 2, 3, 4, 5]
+// newArray: [2, 3]
+
 // To find the Leap year or not a leap tear
 function isLeapYear(year) {
   return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
 }
 
-let year = 2020;
-if (isLeapYear(year)) {
-  console.log(`${year} is a leap year.`);
+let year = "2021";
+if (year.length != 0 && year != 0 && !isNaN(parseInt(year))) {
+  if (isLeapYear(year)) {
+    console.log(`${year} is a leap year.`);
+  } else {
+    console.log(`${year} is not a leap year.`);
+  }
 } else {
-  console.log(`${year} is not a leap year.`);
+  console.log("Invalid Year");
 }
 
 // Find the days in the month corresponding to the input number. Print Error if the input is not in a valid range.
 
 let userInput = 2;
-let month = Number(userInput[0]);
+let month = Number(userInput);
 
 if (isNaN(month) || month < 1 || month > 12) {
   console.log("Error: Invalid month");
@@ -117,7 +218,7 @@ for (let i = 0; i < arr.length; i++) {
     arr[i] != "O" &&
     arr[i] != "U"
   ) {
-    res.push(arr[i]);
+    resu.push(arr[i]);
   }
 }
 console.log(resu);
@@ -131,7 +232,7 @@ console.log(ress);
 
 // (or)
 
-let data = userInput[0];
+let data = "codekata";
 let result = data
   .split("")
   .filter((char) => !"aeiouAEIOU".includes(char))
@@ -149,7 +250,7 @@ for (let i = 0; i < a.length; i += 2) {
 console.log(a);
 
 // find the output
-arr = ["black", "purple", "bllue"];
+arr = ["black", "purple", "blue"];
 const obj = {
   arr: ["red", "blue", "green"],
   getLastColor: function () {
@@ -368,3 +469,56 @@ for (let i = 0; i <= 10; i++) {
   d = temp;
   console.log(temp);
 }
+
+// write a program for following output
+// ///// console.log("output with normalfunction",mul(2)(4)(6))
+// using normal function
+function mul(a) {
+  return function (b) {
+    return function (c) {
+      return a + b + c;
+    };
+  };
+}
+console.log(mul(2)(4)(6));
+
+// using arrow function
+const call = (a) => {
+  return (b) => {
+    return (c) => {
+      return a * b * c;
+    };
+  };
+};
+console.log(call(2)(4)(6));
+
+// write a prog to return resolve if value is less / greater using promise
+
+function checkInput(input) {
+  return new Promise((resolve, reject) => {
+    if (input <= 5) {
+      resolve("its resolved");
+    } else {
+      reject("its rejected");
+    }
+  });
+}
+const input = 7;
+checkInput(input)
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+
+// Multiple without using * sign
+function mul(a, b) {
+  let res = 0;
+  for (let i = 0; i < b; i++) {
+    res += a;
+  }
+  return res;
+}
+
+console.log(mul(5, 5));
