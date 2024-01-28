@@ -31,21 +31,23 @@ I look forward to learning more about this oppurtunity & will be happy to answer
 
 -- HTTP request-response cycle when URL gets hit what happening
 
-When you enter a URL in a browser and hit enter, a series of steps, collectively known as the HTTP request-response cycle, takes place. 
-Heres a simplified overview:
+When you enter a URL in a browser and hit enter, a series of steps, collectively known as the HTTP 
+request-response cycle, takes place. Heres a simplified overview:
 
-URL (Uniform Resource Locator) Parsing: The browser parses the URL to extract information like the protocol (HTTP/HTTPS), domain, and path.
+URL (Uniform Resource Locator) Parsing: The browser parses the URL to extract information like the protocol (HTTP/HTTPS),
+domain, and path.
 
 DNS Resolution: The browser resolves the domain name to an IP address using the Domain Name System (DNS).
 
 TCP Handshake: A TCP (Transmission Control Protocol) connection is established between the browser and the server.
 
-HTTP Request: The browser sends an HTTP request to the server. This includes the method (GET, POST, etc.), headers, and the path specified 
-in the URL.
+HTTP Request: The browser sends an HTTP request to the server. This includes the method (GET, POST, etc.), headers, and 
+the path specified in the URL.
 
 Server Processing: The server receives the request, processes it, and generates an appropriate response.
 
-HTTP Response: The server sends back an HTTP response, which includes status codes, headers, and the requested content (HTML, images, etc.).
+HTTP Response: The server sends back an HTTP response, which includes status codes, headers, and the requested content 
+(HTML, images, etc.).
 
 Rendering: The browser renders the received content, displaying it to the user.
 
@@ -55,14 +57,17 @@ This entire process happens in a matter of milliseconds, enabling users to inter
 Connection-Oriented vs. Connectionless:
 
 TCP: Connection-oriented. It establishes a reliable, bidirectional communication channel before data exchange.
-UDP: Connectionless. It does not establish a connection before sending data, providing a faster but less reliable communication.
+UDP: Connectionless. It does not establish a connection before sending data, providing a faster but less reliable 
+communication.
 Reliability:
 
-TCP: Reliable. It ensures that data is delivered accurately and in the correct order through mechanisms like acknowledgments and retransmission of lost packets.
+TCP: Reliable. It ensures that data is delivered accurately and in the correct order through mechanisms like 
+acknowledgments and retransmission of lost packets.
 UDP: Unreliable. It does not guarantee delivery or order of packets; some packets may be lost without retransmission.
 Flow Control and Congestion Control:
 
-TCP: Implements flow control and congestion control mechanisms to manage data transfer efficiently and avoid network congestion.
+TCP: Implements flow control and congestion control mechanisms to manage data transfer efficiently and avoid network 
+congestion.
 UDP: Does not have built-in mechanisms for flow control or congestion control.
 Header Size:
 
@@ -70,8 +75,10 @@ TCP: Larger header size due to additional control information for reliability.
 UDP: Smaller header size as it carries less control information.
 Usage Scenarios:
 
-TCP: Used for applications requiring reliable and ordered delivery of data, such as web browsing, email, and file transfer (FTP).
-UDP: Suitable for real-time applications where low latency is crucial, like streaming media, online gaming, and VoIP.
+TCP: Used for applications requiring reliable and ordered delivery of data, such as web browsing, email, and 
+file transfer (FTP).
+UDP: Suitable for real-time applications where low latency is crucial, like streaming media, online gaming,
+and VoIP.
 
 
 -- Diff B/w find & filter method
