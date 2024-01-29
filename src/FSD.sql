@@ -480,6 +480,37 @@ the browser tab or window is open. Once the user closes the tab or window, the s
 storage data is cleared automatically. This makes it suitable for storing temporary data
 that is only needed during a single browsing session.
 
+-- What is the Strict mode in JavaScript?
+Strict mode in JavaScript introduces more stringent error-checking in a JavaScript code.
+
+While in Strict mode all variables have to be declared explicitly,values cannot be assigned to a read-only property,etc.
+We can enable strict mode by adding use strict at the beginning of a JavaScript code or within a certain segment of code.
+
+-- What will “typeof NaN return and why?
+The typeof NaN will return number. This is tricky and somewhat counterintuitive, because NaN stands for “Not a number”. 
+However, in Javascript, NaN is considered a special number and therefore its type is number.
+
+-- Can you explain closures with an example?
+A closure is a function that has access to its own scope, the scope of the outer function and the global scope. 
+This often confuses people who are new to JavaScript because it behaves differently than other programming languages 
+in this respect.
+
+function outer() {
+  let outerVar = "I am from outer function!";
+  
+  function inner() {
+    let innerVar = "I am from inner function!";
+    console.log(outerVar);  // I can access outerVar!
+    console.log(innerVar);  // I can access innerVar!
+  }
+  
+  return inner;
+}
+
+const myClosure = outer();
+myClosure();  // Outputs: "I am from outer function!" and "I am from inner function!"
+Here, inner() is a closure that encompasses its own scope, the scope of outer() and the global scope.
+
 ----------------------REACT-------------------
 
 -- import React from 'react'; 

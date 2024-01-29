@@ -16,6 +16,13 @@ export function Video(props) {
     setSelectedVideo(video);
   };
 
+  const extractVideoId = (url) => {
+    const match = url.match(
+      /(?:youtu\.be\/|youtube\.com\/(?:.*\/(?:v\/|e\/|u\/\w+\/|embed\/|v=)|.*[?&]v=))([^"&?\/\s]{11})/
+    );
+    return match ? match[1] : null;
+  };
+
   return (
     <div>
       <div className="search-bar">
@@ -48,10 +55,23 @@ export function Video(props) {
       {selectedVideo && (
         <div className="video-player">
           <h2>{selectedVideo.title}</h2>
-          <video controls width="640" height="360">
-            <source src={selectedVideo.videoUrl} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          {selectedVideo.videoUrl.includes("youtu") ? (
+            <iframe
+              title={selectedVideo.title}
+              width="640"
+              height="360"
+              src={`https://www.youtube.com/embed/${extractVideoId(
+                selectedVideo.videoUrl
+              )}`}
+              frameBorder="0"
+              allowFullScreen
+            ></iframe>
+          ) : (
+            <video controls width="640" height="360">
+              <source src={selectedVideo.videoUrl} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          )}
         </div>
       )}
     </div>

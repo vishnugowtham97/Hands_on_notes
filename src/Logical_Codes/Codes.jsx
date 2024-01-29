@@ -522,3 +522,57 @@ function mul(a, b) {
 }
 
 console.log(mul(5, 5));
+
+
+// Accessing the key value pairs
+// Creating an object
+const myObject1 = {
+  key1: 'value1',
+  key2: 'value2',
+  key3: 'value3',
+};
+
+// Accessing key-value pairs
+for (const key in myObject1) {
+  if (myObject1.hasOwnProperty(key)) {
+    const value = myObject1[key].toUpperCase()[0]+myObject1[key].slice(1);
+    console.log(`${key}: ${value}`);
+  }
+}
+// using Map
+// Creating a Map
+const myMap = new Map([
+  ['key1', 'value1'],
+  ['key2', 'value2'],
+  ['key3', 'value3'],
+]);
+
+// Accessing key-value pairs
+myMap.forEach((value, key) => {
+  console.log(`Key: ${key}, Value: ${value}`);
+});
+
+// using object method
+// Creating an object
+const myObject = {
+  key1: 'value1',
+  key2: 'value2',
+  key3: 'value3',
+};
+
+// Accessing key-value pairs using Object.entries
+Object.entries(myObject).forEach(([key, value]) => {
+  console.log(`Key: ${key}, Value: ${value}`);
+});
+
+// Accessing keys using Object.keys
+Object.keys(myObject).forEach((key) => {
+  const value = myObject[key];
+  console.log(`Key: ${key}, Value: ${value}`);
+});
+
+// Accessing values using Object.values
+Object.values(myObject).forEach((value) => {
+  console.log(`Value: ${value}`);
+});
+
