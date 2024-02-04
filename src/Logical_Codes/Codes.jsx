@@ -4,11 +4,11 @@ let textValue = "Hello"; // String
 let booleanValue = true; // Boolean
 let undefinedValue = undefined; // Undefined
 let nullValue = null; // Null
-let symbolValue = Symbol('unique'); // Symbol
+let symbolValue = Symbol("unique"); // Symbol
 
 // Object Types
 let arrayValue = [1, 2, 3]; // Array
-let objectValue = { key: 'value' }; // Object
+let objectValue = { key: "value" }; // Object
 
 // Functions
 function myFunction() {
@@ -26,47 +26,41 @@ console.log(typeof arrayValue); // "object"
 console.log(typeof objectValue); // "object"
 console.log(typeof myFunction); // "function"
 
+//  //////////////////////////////////////////////////////////////////////////////////////////
+// import React, { useState } from "react";
+// export default function App() {
+//   const [message, setMessage] = useState(false);
+//   const handleClick = () => {
+//     if (message.length === 0) {
+//       setMessage(true);
+//       setMessage("Welcome to my World");
+//     } else {
+//       setMessage("");
+//     }
+//   };
+//   return (
+//     <div>
+//       <h1>{message}</h1>
+//       <button onClick={handleClick}>Click Me</button>
+//     </div>
+//   );
+// }
+// ///////////////////////////////////////////////////////////////////////////////////////////
 
-import React, { useState } from "react";
-import "./App.css";
-
-export default function App() {
-  const [message, setMessage] = useState(false);
-
-  const handleClick = () => {
-    if (message.length === 0) {
-      setMessage(true);
-      setMessage("Welcome to my World");
-    } else {
-      setMessage("");
-    }
-  };
-  return (
-    <div>
-      <h1>{message}</h1>
-      <button onClick={handleClick}>Click Me</button>
-    </div>
-  );
-}
-
-
-import React, { useState } from 'react'
-import './App.css'
-
-export default function App() {
-	const [message, setMessage] = useState(false)
-
-	const handleClick = () => {
-		setMessage(!message)
-	}
-	return (
-		<div>
-			{message && <h1>hi</h1>}
-			<button onClick={handleClick}>Click Me</button>
-		</div>
-	)
-}
-
+// import React, { useState } from 'react'
+// export default function App() {
+// 	const [message, setMessage] = useState(false)
+// 	const handleClick = () => {
+// 		setMessage(!message)
+// 	}
+// 	return (
+// 		<div>
+// 			{message && <h1>hi</h1>}
+// 			<button onClick={handleClick}>Click Me</button>
+// 		</div>
+// 	)
+// }
+// ///////////////////////////////////////////////////////////////////////////////////////////
 
 // splice: Modifies array, adds/removes elements, returns removed elements.
 
@@ -523,28 +517,27 @@ function mul(a, b) {
 
 console.log(mul(5, 5));
 
-
 // Accessing the key value pairs
 // Creating an object
 const myObject1 = {
-  key1: 'value1',
-  key2: 'value2',
-  key3: 'value3',
+  key1: "value1",
+  key2: "value2",
+  key3: "value3",
 };
 
 // Accessing key-value pairs
 for (const key in myObject1) {
   if (myObject1.hasOwnProperty(key)) {
-    const value = myObject1[key].toUpperCase()[0]+myObject1[key].slice(1);
+    const value = myObject1[key].toUpperCase()[0] + myObject1[key].slice(1);
     console.log(`${key}: ${value}`);
   }
 }
 // using Map
 // Creating a Map
 const myMap = new Map([
-  ['key1', 'value1'],
-  ['key2', 'value2'],
-  ['key3', 'value3'],
+  ["key1", "value1"],
+  ["key2", "value2"],
+  ["key3", "value3"],
 ]);
 
 // Accessing key-value pairs
@@ -555,9 +548,9 @@ myMap.forEach((value, key) => {
 // using object method
 // Creating an object
 const myObject = {
-  key1: 'value1',
-  key2: 'value2',
-  key3: 'value3',
+  key1: "value1",
+  key2: "value2",
+  key3: "value3",
 };
 
 // Accessing key-value pairs using Object.entries
@@ -576,3 +569,27 @@ Object.values(myObject).forEach((value) => {
   console.log(`Value: ${value}`);
 });
 
+// To find the fibonacci series
+let e = 6;
+function fibonacciSeries(n) {
+  let res = "";
+  let a = 0;
+  let b = 1;
+  for (let i = 1; i <= n; i++) {
+    for (let j = 1; j <= i; j++) {
+      res += " " + b;
+      let temp = a + b;
+      a = b;
+      b = temp;
+    }
+    res += "\n";
+  }
+  return res.trim();
+}
+console.log(fibonacciSeries(e));
+//  1
+//  1 2
+//  3 5 8
+//  13 21 34 55
+//  89 144 233 377 610
+//  987 1597 2584 4181 6765 10946

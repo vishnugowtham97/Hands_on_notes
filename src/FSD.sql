@@ -53,7 +53,7 @@ Rendering: The browser renders the received content, displaying it to the user.
 
 This entire process happens in a matter of milliseconds, enabling users to interact with websites seamlessly.
 
--- TCP VS UDP
+-- TCP VS UDP(User Datagram Protocol)
 Connection-Oriented vs. Connectionless:
 
 TCP: Connection-oriented. It establishes a reliable, bidirectional communication channel before data exchange.
@@ -64,17 +64,17 @@ Reliability:
 TCP: Reliable. It ensures that data is delivered accurately and in the correct order through mechanisms like 
 acknowledgments and retransmission of lost packets.
 UDP: Unreliable. It does not guarantee delivery or order of packets; some packets may be lost without retransmission.
-Flow Control and Congestion Control:
 
+Flow Control and Congestion Control:
 TCP: Implements flow control and congestion control mechanisms to manage data transfer efficiently and avoid network 
 congestion.
 UDP: Does not have built-in mechanisms for flow control or congestion control.
-Header Size:
 
+Header Size:
 TCP: Larger header size due to additional control information for reliability.
 UDP: Smaller header size as it carries less control information.
-Usage Scenarios:
 
+Usage Scenarios:
 TCP: Used for applications requiring reliable and ordered delivery of data, such as web browsing, email, and 
 file transfer (FTP).
 UDP: Suitable for real-time applications where low latency is crucial, like streaming media, online gaming,
@@ -325,7 +325,7 @@ Here a simple representation of the box model:
 -------------------Javascript:-----------------
 
 -- Features: 
-Case sensitive, Dynamically Typed, Cross-platforms, Interpreted, object orientated Scripting Language, Backward Campability
+Case sensitive, Dynamically Typed, Cross-platforms, Interpreted, object orientated Scripting Language, Backward Capability
 
 -- JavaScript:
 
@@ -511,6 +511,29 @@ const myClosure = outer();
 myClosure();  // Outputs: "I am from outer function!" and "I am from inner function!"
 Here, inner() is a closure that encompasses its own scope, the scope of outer() and the global scope.
 
+-- why JavaScript is single threaded
+JavaScript is a single-threaded language, which means it has a single execution thread for handling tasks. 
+This design is especially suitable for web browsers, where responsiveness is crucial.
+The event-driven, non-blocking nature of JavaScript allows it to handle asynchronous operations efficiently, 
+preventing the main thread from getting blocked.
+
+-- Dynamic Typing:
+JavaScript is dynamically typed, which means that the data type of a variable is determined at runtime. 
+You can assign different types of values to the same variable without explicitly declaring its type.
+
+let myVariable = 10; // Number
+myVariable = "Hello"; // String
+myVariable = true; // Boolean
+Weak Typing:
+
+--Weakly Typed:
+JavaScript is considered weakly typed because it performs implicit type coercion, meaning it automatically 
+converts values between different types during operations. This can sometimes lead to unexpected behavior if 
+not handled carefully.
+
+let result = "5" + 3; // Result is "53"
+
+
 ----------------------REACT-------------------
 
 -- import React from 'react'; 
@@ -531,8 +554,6 @@ When importing, you can use any name for the default import.
 -- import { PrimaryButton } from './Button';
 When you have a module that exports multiple values or functions, you can use curly braces to specify exactly 
 which exports you want to import.
-
-
 
 -- React:
 
@@ -597,6 +618,60 @@ correctly.
 Performance in React can be optimized by using the shouldComponentUpdate() method to minimize unnecessary 
 re-renders, by using pure components, by using React.memo(), and by using code splitting to reduce the 
 size of the JavaScript bundle.
+Bundle and Code Splitting:
+Use tools like Webpack to bundle your code.
+Implement code splitting to load only necessary code for the current view.
+Dynamically import components when needed.
+
+Lazy Loading:
+Lazy load images, especially those not immediately visible to the user.
+Use the React.lazy function for lazy loading components.
+
+Minification and Compression:
+Minify your JavaScript, CSS, and HTML files to reduce file sizes.
+Enable gzip or Brotli compression on your server to reduce network transfer times.
+
+Tree Shaking:
+Use tools like Webpack to remove unused code during the bundling process (tree shaking).
+Ensure that your bundler is configured for production to eliminate dead code.
+
+Optimize Images:
+Compress and optimize images.
+Use responsive images and implement the srcset attribute.
+
+Memoization:
+Use React.memo for functional components to prevent unnecessary re-renders.
+Memoize expensive computations using useMemo hook.
+
+Server-Side Rendering (SSR):
+Implement SSR to render initial HTML on the server, improving initial load times and SEO.
+Consider tools like Next.js for built-in SSR.
+
+CDN (Content Delivery Network):
+Use a CDN to cache and deliver static assets closer to users, reducing latency.
+
+Optimize API Requests:
+Minimize the number of API requests.
+Implement server-side caching and use efficient database queries.
+Service Workers and Progressive Web App (PWA):
+
+Use service workers to cache assets and enable offline functionality.
+Implement a PWA for a more app-like experience.
+
+Performance Monitoring:
+Use tools like Lighthouse, Web Vitals, or browser developer tools to identify performance bottlenecks.
+Monitor and analyze application performance over time.
+
+Reduce Third-Party Dependencies:
+Evaluate and minimize the use of unnecessary third-party libraries.
+Choose lightweight alternatives when available.
+
+Component Performance:
+Optimize rendering of components, especially those that update frequently.
+Use the React DevTools Profiler to identify performance issues.
+Bundle Analysis:
+
+Use tools like Webpack Bundle Analyzer to analyze your bundle size and identify areas for improvement
 
 -- Can you explain the concept of "lifting state up" in React?
 Lifting state up is the process of moving state from a child component to its parent component in order 
