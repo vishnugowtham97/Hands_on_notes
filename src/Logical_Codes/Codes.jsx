@@ -1,3 +1,33 @@
+function asyncFun1() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Hope this day will be great day");
+    }, 1200);
+  });
+}
+
+function asyncFun2() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Hope this month will be great month");
+    }, 2000);
+  });
+}
+
+function asyncFun3() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Year is Invalid");
+    }, 1000);
+  });
+}
+
+Promise.race([asyncFun1(), asyncFun2(), asyncFun3()]);
+Promise.all([asyncFun1(), asyncFun2(), asyncFun3()])
+  .then((result) => console.log("All Promise are resolved:", result))
+  .catch((err) => console.log(err))
+  .finally(() => console.log("All Database are closed"));
+
 // Primitive Types
 let numericValue = 42; // Number
 let textValue = "Hello"; // String
@@ -430,7 +460,7 @@ for (let i = minVal; i <= maxVal; i++) {
 // To find the factor of the number
 
 const nums = prompt("enter the number");
-for (let i = 1; i <= num; i++) {
+for (let i = 1; i <= nums; i++) {
   if (nums % i == 0) {
     console.log(i);
   }
