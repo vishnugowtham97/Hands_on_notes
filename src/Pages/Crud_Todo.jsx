@@ -5,6 +5,7 @@ import Form from "../Form_Validation/Form";
 import Movie_api from "../Fetch-Api/Movie_api";
 import Dog_Breed from "../Fetch-Api/Dog_Breed";
 import Yes_or_No from "../Fetch-Api/YesorNo";
+import Http_Method from "../Http_Method/Http_Method";
 
 const CrudTodo = () => {
   return (
@@ -15,6 +16,7 @@ const CrudTodo = () => {
       <Movie_api />
       <Dog_Breed />
       <Yes_or_No />
+      <Http_Method />
     </div>
   );
 };

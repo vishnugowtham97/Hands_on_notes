@@ -322,6 +322,42 @@ Here a simple representation of the box model:
 |   -------------------   |
 |       Margin            |
 ---------------------------
+
+-- Select the element in Vanilla js
+In vanilla JavaScript, you can select elements from the HTML document using various methods provided by the DOM
+ (Document Object Model) API. Here are some commonly used methods:
+
+1. getElementById();
+2. getElementsByClassName()
+3. getElementsByTagName()
+4. querySelector()
+5. querySelectorAll()
+
+-- To create and remove elements in the DOM (Document Object Model) using JavaScript, you can use various methods 
+-- provided by the DOM API. Here's how you can create and remove elements:
+
+-- // Create a new element
+const newElement = document.createElement('div');
+newElement.textContent = 'New element added';
+document.body.appendChild(newElement);
+
+-- // remove the element
+-- // Get the parent element containing the element you want to remove
+const parentElement = document.getElementById('parentElementId');
+-- // Get the element you want to remove
+const elementToRemove = document.getElementById('elementToRemoveId');
+-- // Remove the element from the DOM
+parentElement.removeChild(elementToRemove);
+
+-- (or)
+
+-- // Get the element you want to remove
+const elementToRemove = document.getElementById('elementToRemoveId');
+elementToRemove.remove();
+
+
+
+
 -------------------Javascript:-----------------
 
 -- Features: 
@@ -349,25 +385,77 @@ from anywhere in a JavaScript program. Function scope Variables defined inside a
 accessible (visible) from outside the function. Block scope Variables declared inside a { } 
 block cannot be accessed from outside the block.
 
+In JavaScript, let, var, and const are used for variable declarations, but they have some differences in terms of 
+scope, hoisting, and mutability.
+
 -- var:
 var is a keyword in JavaScript used to declare function-scoped variables.
 Variables declared with var can be hoisted to the top of their containing function or global scope.
-var allows variable redeclaration within the same scope.
+var variables are hoisted to the top of their function or global scope. This means you can access them before 
+they are declared, but they will have the value undefined.
+You can reassign and redeclare var variables within the same scope.
+
+var x = 10;
+function foo() {
+    console.log(x); // Prints 10
+    var x = 20;
+    console.log(x); // Prints 20
+}
+
+
 -- let:
-let is a keyword in JavaScript used to declare block-scoped variables.
+let is a keyword in JavaScript used to declare block-scoped variables.They are accessible only within the block they 
+are declared in (including if, for, while, etc.).
+let variables are not hoisted to the top of the block scope.
 Variables declared with let can be reassigned within their scope.
+
+let x = 10;
+if (true) {
+    console.log(x); // Prints 10
+let y = 20;    
+console.log(y); // Prints 20
+}
+
 -- const:
 const is a keyword in JavaScript used to declare block-scoped variables with constant values.
-Variables declared with const cannot be reassigned once defined, but they can be mutable if they reference objects or arrays.
+Variables declared with const cannot be redeclared or reassigned its once defined, but they can be mutable if they reference objects or arrays.
 
 -- SET INTERVAL
 setInterval is used when you want to execute a function repeatedly at a certain interval / duration, Same as setTimeout(),
 but repeats the execution of the function continuously.
 
+let count = 0;
+const intervalId = setInterval(() => {
+    console.log("Interval function executed.");
+    count++;
+    if (count >= 5) {
+        clearInterval(intervalId); // Stop the interval after 5 executions
+    }
+}, 1000);
+
+setInterval is commonly used in web development for tasks like:
+
+1. Updating the UI periodically with new data.
+2. Implementing countdown timers or clocks.
+3. Polling for updates from a server.
+4. Animating elements on a webpage.
+5. Running code periodic in background.
+
 -- SET TIMEOUT
 setTimeout is used when you want to execute a function once after a certain delay, Executes a function after waiting a 
 specified number of milliseconds.
 
+console.log("Start");
+setTimeout(() => {
+    console.log("Delayed function executed after 2000 milliseconds.");
+}, 2000);
+console.log("End");
+
+setTimeout is commonly used in web development for tasks like:
+
+1. Delayed animations and transitions.
+2. Implementing debounce or throttle functionality.
+3. Making asynchronous API calls with a delay.
 
 -- What is a Promise in JavaScript?
 A Promise is an object that represents the eventual completion (or failure) of an asynchronous 
@@ -429,11 +517,10 @@ that is executed if the Promise is rejected. The catch() method takes a single p
 which is the error object or message that was returned by the Promise
 
 -- Hoisting
-Hoisting is a behavior in JavaScript where variable and function declarations are moved to the top of their containing scope during the 
-compilation phase, before the code is executed. This means that you can use variables and functions before they are declared in your code, 
-which may seem counter intuitive.
-Variable declarations (var) are hoisted to the top of their containing function or global scope. However, only the declarations are hoisted, 
-not the initializations. This means that the variable is technically available from the beginning of the scope, but its value will be undefined 
+Hoisting is a behavior in JavaScript where variable and function declarations are moved to the top of their containing 
+scope during the compilation phase, before the code is executed. This means that you can use variables and functions 
+before they are declared in your code, However, only the declarations are hoisted, not the initializations. 
+This means that the variable is technically available from the beginning of the scope, but its value will be undefined 
 until the point in the code where its actually assigned a value.
 
 console.log(x); // Output: undefined
@@ -459,7 +546,34 @@ result in a ReferenceError. The variable becomes accessible only after it has be
 
 -- Async/Await:
 Async/await provides a more synchronous-looking syntax for handling asynchronous operations. The async keyword is used to declare a 
-function as asynchronous, and the await keyword is used to pause execution until a promise is get resolved or reject.
+function as asynchronous, and The await keyword can only be used inside async functions and the await keyword is used 
+to pause execution until a promise is get it settled either resolved or reject.
+If the promise is fulfilled, await returns the resolved value. If the promise is rejected, await throws the rejection error, 
+which can be caught using a try...catch block.
+
+function delay(ms) {
+    return new Promise(resolve => {
+        setTimeout(resolve, ms);
+    });
+}
+
+async function example() {
+    console.log('Start');
+    
+    try {
+        await delay(2000); // Pause for 2 seconds
+        console.log('After 2 seconds');
+        
+        await delay(1000); // Pause for another second
+        console.log('After 3 seconds');
+    } catch (error) {
+        console.error('Error:', error);
+    }
+    
+    console.log('End');
+}
+example();
+
 
 -- Destructuring
 Destructuring in JavaScript is a way to extract values from objects and arrays and assign them to variables more conveniently, 
@@ -524,7 +638,6 @@ You can assign different types of values to the same variable without explicitly
 let myVariable = 10; // Number
 myVariable = "Hello"; // String
 myVariable = true; // Boolean
-Weak Typing:
 
 --Weakly Typed:
 JavaScript is considered weakly typed because it performs implicit type coercion, meaning it automatically 
@@ -532,6 +645,96 @@ converts values between different types during operations. This can sometimes le
 not handled carefully.
 
 let result = "5" + 3; // Result is "53"
+
+-- Function Declaration
+In a function declaration, you define a function using the function keyword followed by the function name and parameters.
+Function declarations are hoisted, and moved to the top of the container function scope during compilation phase, before
+the code is executed, which means we can call the function before they declare in the code.
+
+function greet(name){
+  console.log(`Welcome!, ${name}`)
+}
+greet("hlo")
+
+-- Function Expression
+In a function expression, you assign a function to a variable. The function can be named (named function expression) 
+or anonymous (anonymous function expression).
+Function expressions are not hoisted. They are treated like any other variable assignment and are not accessible 
+before the line where they are defined.
+They are typically used when you need to pass a function as an argument to another function.
+
+-- Named function expression
+const greet = function greet(name){
+  console.log(`Welcome!, ${name}`)
+}
+greet("hi")
+
+-- Ananumous function expression
+const greet = function(name){
+  console.log(`Welcome!, ${name}`)
+}
+greet("hi")
+
+-- Concept of the Pure Function 
+The concept of a pure function is a fundamental concept in functional programming and has several benefits:
+
+function add(a,b){
+return a+b
+}
+console.log(add(5,3))
+console.log(add(10,2))
+
+1. It always returns the same result for the same inputs (3 + 5 always equals 8).
+2. It does not modify any external state or variables.
+3. It does not produce any side effects.
+4. They are easier to understand & bcoz they only depend on their inputs and have no hidden dependencies.
+5. They are easier to test because they produce predictable results and do not require complex setup or mocking.
+
+-- Function Currying
+Currying is a functional programming technique is the process of breaking down a function that takes multiple arguments 
+into a series of functions, each taking one argument. This allows for partial application and function composition, 
+enhancing code reusability and flexibility in functional programming.
+
+function curryAdd(x) {
+    return function(y) {
+        return x + y;
+    };
+}
+
+const add2 = curryAdd(2); // Create a new function that adds 2 to its argument
+console.log(add2(3)); // Output: 5 (2 + 3)
+
+
+function mul(a){
+  return function (b){
+    return function (c){
+      return a+b+c
+    }
+  }
+}
+console.log(mul(1)(2)(3))
+
+-- Function Invokation
+Function invocation in JavaScript refers to the process of executing the code contained within a function. 
+The code inside a function is not executed when the function is defined; instead, it is executed only when 
+the function is explicitly called or invoked.
+
+In simpler terms:
+
+Function invocation is when you run the code inside a function by calling or invoking the function.
+
+-- // Define a function
+function greet(name) {
+    console.log("Hello, " + name + "!");
+}
+
+-- // The code inside the function is not executed yet
+
+// Invoke or call the function
+greet("Alice");
+-- // Output: Hello, Alice!
+
+-- // The code inside the function is executed when the function is invoked
 
 
 ----------------------REACT-------------------
@@ -588,6 +791,35 @@ dynamic content, such as user input, without having to reload the entire page.
 React uses a virtual representation of the actual DOM called the virtual DOM. When changes are made to
 the UI, React updates the virtual DOM, compares it with the previous version, and only updates the actual
 DOM where necessary. This minimizes the number of expensive DOM operations, resulting in improved performance.
+
+-- How does the virtual Dom look like
+The virtual DOM is a programming concept that is used in React to improve the performance of web applications. 
+It is a lightweight representation of the actual DOM maintained by JavaScript frameworks like React.js. 
+While the actual DOM is a tree-like structure of HTML elements that represents the structure of a web page, 
+the Virtual DOM is essentially a JavaScript object that mirrors this structure.
+
+{
+  type: 'div',
+  props: {
+    id: 'container',
+    className: 'main-container',
+    children: [
+      {
+        type: 'h1',
+        props: {
+          children: 'Hello, World!'
+        }
+      },
+      {
+        type: 'p',
+        props: {
+          children: 'This is a paragraph.'
+        }
+      }
+    ]
+  }
+}
+
 
 -- How does the component-based architecture in React work?
 In React, a component is a self-contained block of code that manages its own state and can be composed with 
@@ -705,9 +937,7 @@ HOCs can be used to:
 Inject additional props into a component
 Wrap a component with additional markup or behavior
 Provide context to a component
-
-For example, if you have a component that needs to make an API call, you could create an HOC that handles the API call and passes the data down 
-as props to the component. This allows you to abstract away the API logic and reuse it in other components. 
+& used in tasks like code spliting, authentication & state management.
 
 -- What is Redux?
 Redux is a state management library for JavaScript applications. It provides a centralized store for managing 

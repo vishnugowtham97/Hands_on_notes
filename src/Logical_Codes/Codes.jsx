@@ -467,8 +467,8 @@ for (let i = 1; i <= nums; i++) {
 }
 
 //  Simple calculator
-const selectOperator = prompt("enter the operator + - * /");
 const number1 = parseFloat(prompt("enter the number"));
+const selectOperator = prompt("enter the operator + - * /");
 const number2 = parseFloat(prompt("enter the number"));
 
 if (selectOperator == "+") {
@@ -493,6 +493,13 @@ for (let i = 0; i <= 10; i++) {
   d = temp;
   console.log(temp);
 }
+
+// without Third variable
+let ar = [0, 1];
+for (let i = 2; i <= 5; i++) {
+  ar.push(arr[i - 2] + arr[i - 1]);
+}
+console.log(ar);
 
 // write a program for following output
 // ///// console.log("output with normalfunction",mul(2)(4)(6))
@@ -623,3 +630,38 @@ console.log(fibonacciSeries(e));
 //  13 21 34 55
 //  89 144 233 377 610
 //  987 1597 2584 4181 6765 10946
+
+// HCF
+function findHCF(a, b) {
+  if (b === 0) {
+    return a;
+  }
+  return findHCF(b, a % b);
+}
+
+const nums1 = 4;
+const nums2 = 0;
+const hcf = findHCF(nums1, nums2);
+console.log("HCF of", nums1, "and", nums2, "is", hcf);
+
+// Best Time to sell and buy stocks
+const prices = [7, 1, 5, 3, 6, 4];
+function maxProfit(prices) {
+  if (prices.length <= 1) {
+    return 0;
+  }
+  let maxProfit = 0;
+  let minPrices = prices[0];
+  for (let i = 1; i <= prices.length; i++) {
+    let profit = prices[i] - minPrices;
+    if (profit > maxProfit) {
+      maxProfit = profit;
+    }
+
+    if (prices[i] < minPrices) {
+      minPrices = prices[i];
+    }
+  }
+  return maxProfit;
+}
+console.log(maxProfit(prices));
