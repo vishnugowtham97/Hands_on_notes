@@ -1,32 +1,3 @@
----------------- -- -- -- --- --- ---- ----- Self Introduction :- ----- ---- --- --- -- -- -- -- -- -- -----------------
-
-Hello (sir/mam) ${greeting}, 1st of all thankyou for giving me this oppurtunity to introduce myself.  
-
-
-I am Vishnu, from coimbatore I have completed UG degree as a Bachelor of Engineering at Anna university in "SIET" in the
-stream of "EEE" in the year of 2019. After completion of degree got a oppurtunity to collobrate with the Aquasub Engineering 
-its a motor & pump industry. I have 2 years and 8 months of experience in that company as a Testing Engineer. After contract period has 
-over i like to join in the CRI Pumps its also a motor & pump industry working in as a Testing Engineer. After that Lakshmi 
-motors for few months in the Marketing and Service field.
-
-On that time got a chance to attend the workshop about the web development & i really like to learn these web development course
-so i decide to upgrade my skills & took a oppurtunity to change my carrier path to IT field for my future growth potential 
-to build my career & facing new challenges then i get to know about the Guvi platform. Now currently pursuing my 
-FSD course in the guvi. Currently now am seeking for the job in the Frontend Developer role. Why i am particularly 
-looking in the Frontend developer Actually i like to deal with the UI part.
-
-my strength look my self as a hardworking guy, self motivated, problem solving with good communucation, Quick leaner &
-moreover that daily practicing my skills to keep me in update.
-
-my weekness is I will concentrate 1 thing at a time, too detailed oriented & self criticism.
-
-My short time goal is to get a job in a reputated company & long term goal is to achieve a good position, respectful 
-position where i can build my carrier & help the organisation too.
-
-thats all about myself, thank you once again.
-
-I look forward to learning more about this oppurtunity & will be happy to answer more question.
-
 ------------------------------------ Full Stack Developer-------------------------------------------------------
 
 -- HTTP request-response cycle when URL gets hit what happening
@@ -255,7 +226,6 @@ elements with CSS or to link to them with JavaScript
 
 like that class, title, src, href, alt etc.
 
-
 ------------------ CSS:-------------
 
 -- GRID
@@ -323,6 +293,24 @@ Here a simple representation of the box model:
 |       Margin            |
 ---------------------------
 
+-- Font-Size
+In CSS, font size can be specified using various units
+ Absolte Unit : Absolute units specify a fixed size regardless of the context or device
+px: A single pixel on the screen
+
+Relative Units: These units are based on other properties, like the parent elements size or the screen size.
+
+em: Relative to the font size of the element. For example, 2em is twice the font size of the parent.
+rem: Relative to the font size of the root element (<html>). It helps maintain consistency across the page.
+vw (viewport width): 1% of the viewport width. Handy for responsive designs.
+vh (viewport height): 1% of the viewport height. Also useful for responsiveness.
+%: Relative to the font size of the parent element.
+
+Other Units:
+ex: Equal to the height of a lowercase 'x' in the current font.
+ch: Equal to the width of a '0' (zero) in the current font.
+
+
 -- Select the element in Vanilla js
 In vanilla JavaScript, you can select elements from the HTML document using various methods provided by the DOM
  (Document Object Model) API. Here are some commonly used methods:
@@ -355,8 +343,35 @@ parentElement.removeChild(elementToRemove);
 const elementToRemove = document.getElementById('elementToRemoveId');
 elementToRemove.remove();
 
+-- Errors
+1. Syntax Error:
+Syntax errors occur when the JavaScript engine encounters code that violates the language syntax rules.
+These errors typically prevent the script from executing at all.
+Example: Missing semicolon, unclosed brackets, etc.
 
+2. Reference Error:
+Reference errors occur when trying to access a variable or function that is not defined.
+This can happen when referencing variables that have not been declared or when accessing properties or methods of undefined variables.
+Example: console.log(foo); // ReferenceError: foo is not defined
 
+3. Type Errors:
+Type errors occur when trying to perform operation on a value of the wrong type.
+This can happen when trying to perform incompatible operations.
+Example: 'foo'.toUpperCase(5); // TypeError: 'foo'.toUpperCase is not a function
+
+4. Range Errors:
+It occur when trying to manipulate an object with some kind of length and providing an index that is out of range.
+This can happen with array operations or string manipulation methods.
+Example: let arr = [1, 2, 3]; arr[10]; // RangeError: Index out of range
+
+5. Runtime Errors:
+Runtime errors occur while a program is running and are typically caused by logic errors or unexpected conditions.
+These errors may not always be caught by the JavaScript engine and can lead to unexpected behavior or crashes.
+Example: Division by zero, accessing properties of null or undefined, etc.
+
+6.Custom Errors:
+Developers can also create custom error types using JavaScripts Error constructor function.
+It can be useful for handling specific error conditions in applications and providing meaningful error messages to users.
 
 -------------------Javascript:-----------------
 
@@ -557,7 +572,7 @@ function delay(ms) {
     });
 }
 
-async function example() {
+async function executes() {
     console.log('Start');
     
     try {
@@ -572,7 +587,7 @@ async function example() {
     
     console.log('End');
 }
-example();
+executes();
 
 
 -- Destructuring
@@ -605,9 +620,9 @@ The typeof NaN will return number. This is tricky and somewhat counterintuitive,
 However, in Javascript, NaN is considered a special number and therefore its type is number.
 
 -- Can you explain closures with an example?
+A closure in JavaScript is a function bundled together with its lexical environment.It allows a function to access and 
+manipulate variables from its outer scope, even when that outer scope is no longer active. 
 A closure is a function that has access to its own scope, the scope of the outer function and the global scope. 
-This often confuses people who are new to JavaScript because it behaves differently than other programming languages 
-in this respect.
 
 function outer() {
   let outerVar = "I am from outer function!";
@@ -687,12 +702,12 @@ console.log(add(10,2))
 1. It always returns the same result for the same inputs (3 + 5 always equals 8).
 2. It does not modify any external state or variables.
 3. It does not produce any side effects.
-4. They are easier to understand & bcoz they only depend on their inputs and have no hidden dependencies.
+4. They are easier to understand bcoz they only depend on their inputs and have no hidden dependencies.
 5. They are easier to test because they produce predictable results and do not require complex setup or mocking.
 
 -- Function Currying
 Currying is a functional programming technique is the process of breaking down a function that takes multiple arguments 
-into a series of functions, each taking one argument. This allows for partial application and function composition, 
+into a series of functions, each one taking one argument. This allows for partial application and function composition, 
 enhancing code reusability and flexibility in functional programming.
 
 function curryAdd(x) {
@@ -716,11 +731,10 @@ console.log(mul(1)(2)(3))
 
 -- Function Invokation
 Function invocation in JavaScript refers to the process of executing the code contained within a function. 
-The code inside a function is not executed when the function is defined; instead, it is executed only when 
+we define a code inside the function that code inside a function is not executed, it is executed only when 
 the function is explicitly called or invoked.
 
-In simpler terms:
-
+-- In simpler terms:
 Function invocation is when you run the code inside a function by calling or invoking the function.
 
 -- // Define a function
@@ -736,6 +750,216 @@ greet("Alice");
 
 -- // The code inside the function is executed when the function is invoked
 
+
+-- Undefined:
+
+undefined is a primitive value that represents the absence of a value or an uninitialized variable.
+It is automatically assigned to variables that have been declared but not yet initialized or a value not get assigned.
+It is also the default return value for functions that do not explicitly return anything.
+
+let x; // Variable declared but not initialized, so its undefined
+console.log(x); // Outputs: undefined
+
+function foo() {}
+console.log(foo()); // Outputs: undefined (because foo() does not return anything)
+
+-- Null
+
+typeof null returning object, null itself is not an object.
+It is a primitive value that represents the intentional absence of any object value.
+Unlike undefined, null is a value that must be explicitly assigned to a variable.
+Its often used to indicate that a variable or property intentionally has no value usually set by programmer like us.
+
+let y = null; // Variable explicitly assigned null
+console.log(y); // Outputs: null
+
+-- === (Strict Equality):
+
+The === operator, it evaluates to true only if the operands are of the same type and have the same value.
+It does not perform type coercion when comparing values.
+
+console.log(5 === 5); // true
+console.log(5 === '5'); // false (because one is a number and the other is a string)
+
+-- == (Loose Equality):
+
+The == operator, it evaluates to true if the operands are equal in value after type coercion if needed.
+It performs type coercion when comparing values of different types,it automatically to convert one type to another 
+to make the comparison.
+
+console.log(5 == 5); // true
+console.log(5 == '5'); // true (because the string '5' is coerced to a number)
+
+
+-- How to check the type of the variable
+In JavaScript, you can check the type of a variable using the typeof operator or the instanceof operator. 
+
+-- 1. Using typeof:
+The typeof operator returns a string indicating the type of the operand. Its generally used to check primitive types 
+and some built-in objects.
+
+let x = 5;
+console.log(typeof x); // Output: "number"
+
+let y = 'hello';
+console.log(typeof y); // Output: "string"
+
+let z = true;
+console.log(typeof z); // Output: "boolean"
+
+let obj = {};
+console.log(typeof obj); // Output: "object"
+
+let arr = [];
+console.log(typeof arr); // Output: "object" (Note: Arrays are objects in JavaScript)
+
+-- 2. Using instanceof:
+The instanceof operator checks whether an object belongs to a specific class or constructor function. 
+Its commonly used to check the type of custom objects and instances of built-in objects.
+
+function Person(name) {
+    this.name = name;
+}
+
+let person = new Person('John');
+console.log(person instanceof Person); // Output: true
+
+let arr = [1, 2, 3];
+console.log(arr instanceof Array); // Output: true
+
+let obj = {};
+console.log(obj instanceof Object); // Output: true
+
+-- innerHTML
+InnerHTML is a property of DOM elements that represents the HTML content within an element.
+It can be used to both retrieve and set the HTML content of an element.
+When you set innerHTML, youre effectively replacing the existing HTML content of the element with the new HTML 
+content you provide.
+Be cautious when using innerHTML with user-generated or untrusted content, as it can lead to security vulnerabilities,
+if not properly sanitized.
+
+
+const element = document.getElementById('myElement');
+const htmlContent = element.innerHTML;
+// Set new HTML content to the element
+element.innerHTML = '<p>New HTML content</p>';
+
+-- textContent
+textContent is a property of DOM elements that represents the text content within an element.
+It only deals with text content and does not interpret any HTML tags as markup.
+When you set textContent, it replaces all existing content within the element with the specified text, 
+including any child elements.
+It is safer to use textContent when you only want to manipulate text content, as it automatically escapes any HTML 
+characters, preventing HTML from vulnerabilities.
+
+const element = document.getElementById('myElement');
+const textContent = element.textContent;
+// Set new text content to the element
+element.textContent = 'New text content';
+
+-- Callaback Function 
+Callbacks are functions passed as arguments to other functions, to be executed once an asynchronous operation completes.
+Callback functions are commonly used in JavaScript to handle asynchronous tasks, such as making API requests, 
+reading files, executing animations and waiting for user input.
+
+function fetchData(callback) {
+  // Simulating an asynchronous operation (e.g., fetching data from a server)
+  setTimeout(() => {
+    const data = "This is the fetched data";
+    // Call the callback function with the fetched data
+    callback(data);
+  }, 2000); // Simulating a delay of 2 seconds
+}
+
+// Define a callback function to handle the fetched data
+function handleData(data) {
+  console.log("Data received:", data);
+}
+
+// Call the fetchData function and pass the handleData function as a callback
+fetchData(handleData);
+
+
+-- Callback Hell / Pyramid of doom
+Callback hell, also known as the "pyramid of doom," It is a situation in asynchronous programming where code becomes 
+difficult to read and maintain due to nested callback functions. This typically occurs when dealing with multiple 
+asynchronous operations that depend on each other or need to be executed sequentially.
+
+asyncFunction1(param1, function(err, result1) {
+  if (err) {
+    handleError(err);
+  } else {
+    asyncFunction2(result1, function(err, result2) {
+      if (err) {
+        handleError(err);
+      } else {
+        asyncFunction3(result2, function(err, result3) {
+          if (err) {
+            handleError(err);
+          } else {
+            <p>Callback Hell</p>
+          }
+        });
+      }
+    });
+  }
+});
+
+-- Spread operator
+It spreads the elements of an iterable (array, string, etc.) into individual elements.
+Commonly used for array manipulation, object manipulation, and function calls.
+
+It used to expand elements of an iterable (like an array or string) into places where multiple elements are expected. 
+
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+const combinedArray = [...arr1, ...arr2]; // Combines elements of arr1 and arr2 into a new array
+console.log(combinedArray); // Output: [1, 2, 3, 4, 5, 6]
+
+-- Rest Parameter
+It collects all remaining arguments into a single array parameter.
+Commonly used when you want to create functions that can accept a variable number of arguments.
+
+It used to represent an indefinite number of arguments as an array in function definitions.
+
+function myFunction(...args) {
+    console.log(args);
+}
+
+myFunction(1, 2, 3, 4, 5); // Output: [1, 2, 3, 4, 5]
+
+
+-- This keyword
+This is a keyword refers to objects,that is currently execting the  function.
+
+In an object method, this refers to the object on which the method is called.
+When used alone in a function or non-strict mode, this refers to the global object 
+(window in browsers, global in Node.js).
+
+In a function, this refers to the global object.
+In a function, in strict mode, this is undefined.
+In an event, this refers to the element that received the event.
+Methods like call(), apply(), and bind() can refer this to any object.
+Note
+this is not a variable. It is a keyword. You cannot change the value of this.
+
+
+-- diff B/w normal and arrow function 
+
+1. syntax
+function normalFun(){
+  //write code here
+  }
+const arrowFun = ()=>{
+  //writr code here
+}
+
+2. This keyword
+In normal function the value this depends on the function where it is getting called
+In arrow function doesnt have theirown this, binded it its closest non arrow function
+3. New keyword
+Regular function are constructable and callable
+Arrow function are only callable not constructable
 
 ----------------------REACT-------------------
 
