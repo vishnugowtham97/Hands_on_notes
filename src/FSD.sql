@@ -1,5 +1,26 @@
 ------------------------------------ Full Stack Developer-------------------------------------------------------
 
+HTTP (Hypertext Transfer Protocol) and HTTPS (Hypertext Transfer Protocol Secure) are both protocols used for 
+transferring data over the internet. The primary difference between them lies in the way data is transferred and 
+the level of security provided.
+
+-- HTTP (Hypertext Transfer Protocol):
+
+HTTP is a protocol used for transmitting data over the internet.
+It operates at the application layer of the TCP/IP model.
+It is the foundation of data communication for the World Wide Web.
+HTTP data is transmitted in plain text format, which means that if intercepted, the data can be easily read by anyone.
+It does not provide any encryption or security mechanisms by default.
+
+-- HTTPS (Hypertext Transfer Protocol Secure):
+
+HTTPS is a secure version of HTTP.
+It uses SSL/TLS (Secure Sockets Layer/Transport Layer Security) protocol to encrypt data transmitted between 
+the browser and the server.
+It ensures that the data exchanged between the client and server is encrypted and secure from eavesdroppers and tampering.
+HTTPS is commonly used for sensitive transactions such as online banking, e-commerce, and login sessions.
+It uses port 443 by default instead of port 80 used by HTTP.
+
 -- HTTP request-response cycle when URL gets hit what happening
 
 When you enter a URL in a browser and hit enter, a series of steps, collectively known as the HTTP 
@@ -129,26 +150,53 @@ or in the pages tab.
 The <body> element defines the documents body, and is a container for all the visible contents, 
 such as headings, paragraphs, images, hyperlinks, tables, lists, etc.
 
+-- Attribute
+HTML attributes provide additional information about HTML elements.
+Attributes are always specified in the start tag
+Attributes usually come in name/value pairs like: name="value"
+
+-- Data-* attribute
+The data-* attribute is used to store custom data private to the page or application.
+The data-* attribute gives us the ability to embed custom data attributes on all HTML elements.
+The stored (custom) data can then be used in the pages JavaScript to create a more engaging user experience
+The data-* attribute consist of two parts:
+The attribute name should not contain any uppercase letters, and must be at least one character long after 
+the prefix "data-"
+The attribute value can be any string
+
 -- DOM
 The Document Object Model, commonly referred to as the DOM, is a platform and language neutral programming interface for web documents. 
 It represents the page so that programs can change the document structure, style, and content dynamically. In simpler terms, its a way for 
 developers to interact with and manipulate web pages using code typically js.
 
 -- Div VS Section VS Article VS Span: 
-division : container for grouping elements together. 
+division : <div> stands for "division" and is a block-level element container for grouping elements together. 
+<div> elements are often used for layout purposes, allowing developers to structure content into different sections 
+or containers.
+
 section : it typically contains multiple paragraphs, headings, images, and other content.
 article : should have a unique topic, be complete in itself.
 span : tag is often used in combination with CSS to style text or apply special effects, such as changing the 
-       font color or background color of a particular word or phrase
+     font color or background color of a particular word or phrase. <span> is an inline-level element.
+     <span> tag is much like the <div> element, but <div> is a block-level element and <span> is an inline element.
 
 -- inline 
 elements are elements that take up the do not occupy full width of their parent container that means does not start on 
 a new line. eg: <span> tag
 
+In HTML, inline elements can be categorized into replaced and non-replaced elements based on how they are displayed and 
+interacted with in the browser:
+Replaced inline elements are those elements whose content is replaced by an external resource, such as an image, video, or input control.
+Non-replaced inline elements are those elements whose content is rendered based on the HTML content itself.
+
 -- block elements
 elements are elements that take up the full width of their parent container and create a new line 
 after themselves that means always start on a new line and browser automatically add some space before and after the 
 element. eg: <p>, <div> 
+
+-- canvas
+The <canvas> element in HTML is a replaced inline element used for drawing graphics, animations, and 
+other visual elements dynamically on a web page using JavaScript. 
 
 -- OVERFLOW
 The overflow property can be set to one of the following values:
@@ -189,12 +237,13 @@ Media queries allow you to specify different styles for different screen sizes, 
 and other device characteristics. Media queries are written using the @media 
 
 -- Semantic tags
-Semantic tags are used to represent the different parts of a web page in a meaningful way.
+Semantic tags are used to represent the different parts of a web page in a meaningful way & improving accessibility 
+and search engine optimization(SEO).
 
 <header>: Represents the top section of a web page, typically containing the site logo, navigation, and other introductory elements.
 <nav>: Defines a navigation menu for a web page.
 <main>: Represents the primary content of a web page, excluding headers, footers, and sidebars.
-<section>: Defines a thematic grouping of content within a web page.
+<section>: Defines a thematic grouping of content within a web page.It is used to divide content thematically
 <article>: Represents a self-contained composition within a document, such as a blog post or news article.
 <aside>: Represents content that is tangentially related to the surrounding content, often placed in a sidebar.
 <footer>: Represents the bottom section of a web page, typically containing copyright information, contact details, and other closing elements.
@@ -227,6 +276,21 @@ elements with CSS or to link to them with JavaScript
 like that class, title, src, href, alt etc.
 
 ------------------ CSS:-------------
+In the context of CSS, "cascading" refers to the process of determining which style rules should be applied 
+to elements when there are conflicting or overlapping styles defined. The term "cascading" comes from the way in 
+which styles flow or cascade down from parent elements to their children in the HTML document.
+
+-- Specificity in css
+Each CSS rule has a specificity value, which determines its priority in the cascade. More specific rules override less 
+specific ones. Specificity is calculated based on the type of selector used (e.g., element, class, ID) and 
+determines which styles take precedence.
+
+Inline styles have the highest specificity. They are defined directly within the HTML element using the style attribute.
+ID selectors have higher specificity than class selectors and element selectors. They are denoted by a # followed by an ID name.
+Class selectors and attribute selectors have higher specificity than element selectors. They are denoted by a . followed by a class name or by using square brackets for attribute selectors.
+Universal selectors (*) and pseudo-elements (::before, ::after) have the lowest specificity.
+Combinations of the selectors increase specificity. For example, '#id .class' has higher specificity than just #id.
+Element selectors: Selectors targeting HTML elements directly (e.g., p, div, a). Specificity Priority: Lowest.
 
 -- GRID
 Grid is a two-dimensional layout system that allows you to create complex layouts with rows and
@@ -310,6 +374,12 @@ Other Units:
 ex: Equal to the height of a lowercase 'x' in the current font.
 ch: Equal to the width of a '0' (zero) in the current font.
 
+-- box-sizing: boder-box
+content-box is the default value for the box-sizing property.
+border-box value alters the default behavior of the box model.
+
+content-box calculates dimensions based only on the content area, while 
+border-box includes padding and border widths in the specified width and height.
 
 -- Select the element in Vanilla js
 In vanilla JavaScript, you can select elements from the HTML document using various methods provided by the DOM
@@ -373,6 +443,18 @@ Example: Division by zero, accessing properties of null or undefined, etc.
 Developers can also create custom error types using JavaScripts Error constructor function.
 It can be useful for handling specific error conditions in applications and providing meaningful error messages to users.
 
+-- diff b/w react and js
+Declarative (React): You tell React what you want to accomplish, and React figures out how to do it. 
+You describe your user interface in terms of components and their relationships, and React takes care of updating 
+the UI efficiently.
+
+Imperative (JavaScript): You tell JavaScript exactly how to do something step by step. You write code that 
+explicitly instructs the computer on how to perform each action, managing state changes and updating the DOM manually.
+
+In React, you focus on describing what you want your UI to look like, while in JavaScript, you focus on writing 
+the code to make it happen step by step. React declarative approach simplifies building user interfaces by 
+handling the underlying complexity of managing state and updating the DOM efficiently.
+
 -------------------Javascript:-----------------
 
 -- Features: 
@@ -392,6 +474,14 @@ speed up web development. Popular libraries and frameworks include jQuery, Angul
 Back-End Development: With the introduction of technologies like Node.js, JavaScript can also be used for server-side development, 
 allowing developers to build full-stack applications using a single language.
 
+-- Data Types
+Primitive Types:(call by value)
+Primitive types represent single values and are immutable (cannot be changed). They are stored directly in memory.
+Number, string, Boolean, undefined, null & symbol
+
+Non-Primitive Types (Reference Types): (call by reference)
+Non-primitive types are mutable and are accessed by reference. They are stored as references in memory.
+object, array & function 
 
 -- Scope:
 JavaScript has 3 types of scope:
@@ -939,8 +1029,6 @@ When used alone in a function or non-strict mode, this refers to the global obje
 In a function, this refers to the global object.
 In a function, in strict mode, this is undefined.
 In an event, this refers to the element that received the event.
-Methods like call(), apply(), and bind() can refer this to any object.
-Note
 this is not a variable. It is a keyword. You cannot change the value of this.
 
 
@@ -956,10 +1044,26 @@ const arrowFun = ()=>{
 
 2. This keyword
 In normal function the value this depends on the function where it is getting called
-In arrow function doesnt have theirown this, binded it its closest non arrow function
+In arrow function doesnt have their own this, binded its closest non arrow function
 3. New keyword
 Regular function are constructable and callable
 Arrow function are only callable not constructable
+
+-- Parameter 
+
+A parameter is a variable in a function definition. It is a placeholder that represents the data that a function 
+expects to receive when it is called.
+Parameters are local variables to the function and have scope within the function block.
+function greet(name) {
+    console.log("Hello, " + name + "!");
+}
+In this function greet, name is a parameter.
+
+-- Argument:
+
+An argument is the actual value or data that is passed to a function when it is called or invoked
+Arguments are passed in the function call, within the ()parentheses following the function name.
+greet("Alice"); In this function call, "Alice" is an argument.
 
 ----------------------REACT-------------------
 
